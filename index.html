@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+ 
+        <style>
+	     div#imageDiv{
+                 width : 100px;
+                height : 100px;
+                position:relative;
+                animation-name:flower;
+	     }
+       @keyframes flower{
+             0%  {left:240px; top:0px;}
+             25% {left:240px; top:380px;}
+             50% {left:920px; top:380px;}
+             75% {left:920px; top:0px;}
+             100% {left:240px; top:0px;}
+       
+       
+       }
+       
+       img{
+              width : 100px;
+                height : 100px;
+        }
+        p{
+
+                width : 500px;
+                height : auto;
+                padding : 30px;
+                text-align:justify;
+                background-color:pink;
+                margin-left:350px;
+                margin-top:100px;
+                position:fixed;
+			}
+		</style>
+        <script>
+        var x;
+		function start()
+        {
+         x = document.getElementById("imageDiv");
+         x.style.animation="4s ease 0s normal none 2 running flower";
+         x.innerHTML="<img id ='image1' src='image.png'>";
+         x.addEventListener("animationiteration",myRepeatFunction);
+          x.addEventListener("animationend",myEndFunction)
+        }
+        function myRepeatFunction(){
+            x.innerHTML="<img id= 'image2' src = 'image.png' style='filter:brightness(200%);'>";
+        }
+        function myEndFunction(){
+            x.innerHTML="<img id= 'image3' src = 'image.png' style='filter:grayscale(20%);'>";
+        }
+        </script>
+   
+    <body>
+   <center>
+    <h2>Wedding Event</h2><br>
+    <input type="button" onclick="start()" value="Click me"><br><br>
+    <div id = "imageDiv">
+        
+    </div>
+   
+    <p style="top:100px">
+  A wedding is a ceremony where two people or a couple are  united in marriage. 
+  Wedding traditions and customs vary greatly between cultures, ethnic groups, religions,
+  countries, and social classes. Most wedding ceremonies involve an exchange of marriage vows by the couple,
+  presentation of a gift (offering, ring(s), symbolic item, flowers, money), and a public proclamation of 
+  marriage by an authority figure or celebrant. Special wedding garments are often worn, and the ceremony 
+  is sometimes followed by a wedding reception. Music, poetry, prayers or readings from religious texts or 
+  literature are also commonly incorporated into the ceremony.
+    </p>
+    </center>
+    </body>
+</html>
